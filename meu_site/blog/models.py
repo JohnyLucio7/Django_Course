@@ -22,3 +22,13 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+
+
+    '''
+    Post.objects.bulk_create([
+        Post(title='Testando o shell do Django com Bulk',slug='testando-o-shell-do-django-com-bulk',content='Testando o shell do Django com Bulk',author=user),
+        Post(title='Testando o shell do Django com Bulk 2',slug='testando-o-shell-do-django-com-bulk-2',content='Testando o shell do Django com Bulk 2',author=user),
+        Post(title='Testando o shell do Django com Bulk 3',slug='testando-o-shell-do-django-com-bulk-3',content='Testando o shell do Django com Bulk 3',author=user),
+    ])
+    '''
