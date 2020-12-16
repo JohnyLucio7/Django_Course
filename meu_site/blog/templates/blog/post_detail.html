@@ -1,8 +1,15 @@
 {% extends 'base.html' %}
 {% block title %} Blog - Detalhe {% endblock title %}
 {% block content %}
-        <div class="post-entry">
-            <h2>{{custom.title}}</h2>
-            <p>{{custom.content}}</p>
+<div class="post-entry">
+    <div class="card">
+        <div class="card-header">
+            <h2>{{object.title}}</h2>
         </div>
+        <div class="card-body">
+            <p class="card-text">{{object.content}}</p>
+        </div>
+    </div>
+</div>
+<a href="{{post.get_absolute_url_update}}" class="btn btn-primary">+ Edit Post</a>
 {% endblock content %}

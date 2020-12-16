@@ -3,11 +3,12 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 from django.urls import reverse
 
+
 # Create your models here.
 class PublishedManager(models.Manager):
     def get_queryset(self):
-        return super(PublishedManager,self).get_queryset()\
-                                           .filter(status='publicado')
+        return super(PublishedManager, self).get_queryset() \
+            .filter(status='publicado')
 
 
 class Post(models.Model):
@@ -24,19 +25,20 @@ class Post(models.Model):
     changed = models.DateTimeField(auto_now=True)
     status = models.CharField(max_length=10, choices=STATUS, default='rascunho')
 
-    objects          = models.Manager()
+    objects = models.Manager()
     publishedManager = PublishedManager()
 
     def get_absolute_url(self):
         return reverse('post_detail', args=[self.slug])
 
+    def get_absolute_url_update(self):
+        return reverse('post_edit', args=[self.slug])
+
     class Meta:
-        ordering = ('published',)
+        ordering = ('-published',)
 
     def __str__(self):
         return self.title
-
-
 
     '''
     Post.objects.bulk_create([

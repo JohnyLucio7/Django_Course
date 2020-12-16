@@ -15,12 +15,13 @@ header h1 a {
 }
 
 .nav-left {
-    margin-right: auto
+    margin-right: auto;
+    padding: 1rem;
 }
 
 .nav-right {
     display: flex;
-    padding-top: 2rem;
+    padding-top: 1rem;
 }
 
 .post-entry {
